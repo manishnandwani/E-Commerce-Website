@@ -1,0 +1,47 @@
+<h1>
+    Cart
+</h1>
+<div class="container row">
+    <!-- <div class="col-lg-4 col-md-6 mb-4" ng-repeat="item in cart.items|filter:product.search: product.rating| orderBy:product.sorttype"> -->
+     <div class="col-lg-4 col-md-6 mb-4" ng-repeat="item in cart.items">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="{{item.image}}" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="#!/category/{{product.category}}/product/{{item.name}}">{{item.name}}</a>
+          </h4>
+          <h5>${{item.price}}</h5>
+          <p class="card-text">{{item.desc}}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">
+            <span ng-if="item.rating>0">&#9733;</span><span ng-if="item.rating<=0">&#9734;</span>
+            <span ng-if="item.rating>1">&#9733;</span><span ng-if="item.rating<=1">&#9734;</span>
+            <span ng-if="item.rating>2">&#9733;</span><span ng-if="item.rating<=2">&#9734;</span>
+            <span ng-if="item.rating>3">&#9733;</span><span ng-if="item.rating<=3">&#9734;</span>
+            <span ng-if="item.rating>4">&#9733;</span><span ng-if="item.rating<=4">&#9734;</span>
+          </small>
+        </div>
+        <span>
+          Quantity of products: 
+          <select ng-model="item.qty" ng-change="cart.total()">
+              <option  >1</option>
+              <option >2</option>
+              <option >3</option>
+          </select>
+        </span>
+       
+        Sum amount=${{item.qty * item.price}}
+
+      <button class="btn btn-danger"  ng-click="cart.remove(item)" >Remove</button>
+
+      </div>
+
+    
+    </div> 
+</div>
+
+Total=${{cart.amount}}
+ 
+   
+    

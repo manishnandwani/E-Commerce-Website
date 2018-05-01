@@ -1,0 +1,36 @@
+<h2 style="margin:20px">
+
+   <strong >
+      <div>Enter the Category name :  <br>
+             <input type="text" placeholder="Category" ng-model="category.name"></div>
+
+      <div>Enter the item name :  <br>
+            <input type="text" placeholder="Name" ng-model="item.name"></div>
+
+      <div>Enter the brand : <br>
+            <input type="text"placeholder="Brand"  ng-model="item.brand"></div>
+
+      <div>Enter the Price: 
+            <div class="input-group input-group-sm">
+       
+            <input type="text"  placeholder="Price"  aria-describedby="Addon1"  ng-model="item.price">
+            <span class="input-group-addon" id="Addon1">$</span>
+            </div>
+
+      </div>
+
+      <div>Enter the description : <br> 
+            <input type="text" placeholder="Description"  ng-model="item.desc">
+      </div>
+
+      <div>Enter the rating : <br>
+            <div class="input-group ">
+                  <input type="text"  placeholder="Rating"  aria-describedby="Addon1"  ng-model="item.rating">
+                        <span class="input-group-addon" id="Addon1">*</span>
+            </div>
+      </div>
+
+    </strong>
+</h2>
+
+<button class="btn btn-info btn-lg"style="margin:10px;" ng-click="add.adding(item)">Adding</button>
